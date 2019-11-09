@@ -115,7 +115,7 @@
 						loadScript(['https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js','../axios.js'])
 						.then(
 							()=>Promise.all([
-								loadText([`./ui.html`,'./ui.html']).then((result)=>{window.GAME_UI=result;}),
+								loadText([`https://cdn.jsdelivr.net/gh/hiames/moshe@0.1/ui.html`,'./ui.html']).then((result)=>{window.GAME_UI=result;}),
 							])
 						),
 					])
