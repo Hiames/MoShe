@@ -5,21 +5,21 @@
 			<li v-for="msg in popMessages" v-html="msg"></li>
 		</ul>
 	</div>
-	<model-alert v-if="showUpdate" :title="`膜拜${YUKAI} ${VERSION} ${VERSION_NAME}`"
+	<model-alert v-if="showUpdate" :title="`膜拜虵 ${VERSION} ${VERSION_NAME}`"
 		:value="VERSION_MESSAGE"></model-alert>
-	<h1 v-html="`膜拜${YUKAI}`"></h1>
+	<h1 v-html="`膜拜虵`"></h1>
 	<div>
 		<button style="float: right;"
-			@click="()=>dailyMessage=DAILY_MESSAGES[Math.floor(Math.random()*DAILY_MESSAGES.length)]">{{`换一个`}}</button>
+			@click="()=>dailyMessage=DAILY_MESSAGES[Math.floor(Math.random()*DAILY_MESSAGES.length)]">{{`来点人生道理`}}</button>
 		<p v-html="dailyMessage"></p>
 	</div>
 	<div class="area">
-		<h2 v-html="`test`"></h2>
+		<h2 v-html="`蛤国遗迹`"></h2>
 		<blockquote>
-			<p v-html="`曾经，有一个高度发达的文明在这个星球上度过了它最为繁荣的时代。在那时，人们相信${YUKAI}是最强的神，也是这个星球的科技、魔法与信仰三大学科体系高度发展的原因。`">
+			<p v-html="`这颗星球曾见证一个伟大文明的崛起，却也经历它的衰亡。`">
 			</p>
-			<p v-html="`然而好景不长，曾被人们认为亘古不变的真理在一次失控的魔法实验之后支离破碎。科技与魔法的支柱轰然倒塌，毁灭席卷了整个星球。`"></p>
-			<p v-html="`高楼变为废墟，法阵化作黄土，雕像碎成砂砾，但${YUKAI}并未抛弃这个文明——因为信仰仍在。`"></p>
+			<p v-html="`在一次失控的膜法实验中，邪恶的力量席卷而出，毁灭了繁荣昌盛的蛤国。曾经的王都，如今满布残横断瓦。`"></p>
+			<p v-html="`高楼变为废墟，法阵化作黄土，雕像碎成砂砾，但虵并未抛弃这个文明——因为信仰仍在。`"></p>
 		</blockquote>
 		<div class="col">
 			<h4 v-html="`膜拜`"></h4>
