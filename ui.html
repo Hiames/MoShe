@@ -28,45 +28,45 @@
 					<span>{{`您已膜拜${pn(Math.floor(moValue))}次`}}</span>
 				</div>
 				<button @click="moYukai(1)" style="color:red"
-					v-html="`膜拜${YUKAI}${moDelta!==1?`${pn(moDelta)}次`:''}`"></button>
+					v-html="`膜拜虵${moDelta!==1?`${pn(moDelta)}次`:''}`"></button>
 				<span v-if="bookEffect>0">{{`${pn(bookEffect)}点击/秒`}}</span>
 			</div>
 			<div v-if="moCount>=10">
 				<button @click="buyAdvancedMo"
-					:disabled="!canBuyAdvancedMo">{{`真诚膜拜${advancedMoLevel>0?' Lv.'+pn(advancedMoLevel):''} [${pn(advancedMoCost)}次膜拜]`}}</button>
+					:disabled="!canBuyAdvancedMo">{{`用力膜拜${advancedMoLevel>0?' Lv.'+pn(advancedMoLevel):''} [${pn(advancedMoCost)}次膜拜]`}}</button>
 				<button v-if="techLevel('xuanxue')>=1" @click="()=>{while(canBuyAdvancedMo)buyAdvancedMo();}"
 					:disabled="!canBuyAdvancedMo" class="buy-max"></button>
 			</div>
 			<div v-if="advancedMoLevel>=10">
 				<button @click="buyMoer"
-					:disabled="!canBuyMoer">{{`${moers>0?`${pn(moers)}位`:''}信徒 [${pn(moerCost)}次膜拜]`}}</button>
+					:disabled="!canBuyMoer">{{`${moers>0?`${pn(moers)}位`:''}膜法师 [${pn(moerCost)}次膜拜]`}}</button>
 				<button v-if="techLevel('xuanxue')>=2" @click="()=>{while(canBuyMoer)buyMoer();}"
 					:disabled="!canBuyMoer" class="buy-max"></button>
 			</div>
 			<div v-if="advancedMoLevel>=20">
 				<button @click="buyChurch"
-					:disabled="!canBuyChurch">{{`${churchs>0?`${pn(churchs)}座`:''}教堂 [${pn(churchCost)}位信徒]`}}</button>
+					:disabled="!canBuyChurch">{{`${churchs>0?`${pn(churchs)}座`:''}圣所 [${pn(churchCost)}位膜法师]`}}</button>
 				<button v-if="techLevel('xuanxue')>=6" @click="buyChurchMax" :disabled="!canBuyChurch&&!canBuyMoer"
 					class="buy-max"></button>
 			</div>
 		</div>
 		<div class="col" v-if="churchs>=5">
-			<h4 v-html="`信仰`"></h4>
+			<h4 v-html="`膜力`"></h4>
 			<div>
 				<div>
-					<span>{{`信仰:${pn(XY)}`}}</span>
+					<span>{{`膜力:${pn(XY)}`}}</span>
 				</div>
-				<button @click="buyXY" :disabled="moValue&lt;=0">{{`转化信仰 (+${pn(XYEarn)}信仰)`}}</button>
+				<button @click="buyXY" :disabled="moValue&lt;=0">{{`转化膜力 (+${pn(XYEarn)}膜力)`}}</button>
 			</div>
 			<div v-if="XY>=100||books>0">
 				<button @click="buyBook"
-					:disabled="!canBuyBook">{{`${books>0?`${pn(books)}卷`:''}经书 [${pn(bookCost)}信仰]`}}</button>
+					:disabled="!canBuyBook">{{`${books>0?`${pn(books)}卷`:''}蛤三篇 [${pn(bookCost)}膜力]`}}</button>
 				<button v-if="techLevel('xuanxue')>=1" @click="()=>{while(canBuyBook)buyBook();}"
 					:disabled="!canBuyBook" class="buy-max"></button>
 			</div>
 			<div v-if="books>0||sping||spLevel>0">
 				<button v-if="sping" disabled="disabled">{{`传教${pnr(spLevel)}`}}</button>
-				<button v-else @click="sp" :disabled="books&lt;spCost">{{`传教${pnr(spLevel)} [${spCost}本经书]`}}</button>
+				<button v-else @click="sp" :disabled="books&lt;spCost">{{`传教${pnr(spLevel)} [${spCost}本蛤三篇]`}}</button>
 				<hint-message :value="spMessage" :update="spMessageUpdate"></hint-message>
 				<div v-if="sping">
 					<span v-html="SP_PROBLEMS[spingProblem.pid][0]"></span>
@@ -81,7 +81,7 @@
 						:disabled="XY&lt;exploreTempleCost">{{`探索遗迹 [${pn(exploreTempleCost)}信仰]`}}</button>
 				</div>
 				<div v-else>
-					{{`探索下一个遗迹需要${pn(exploreNeed)}位信徒`}}
+					{{`探索下一个遗迹需要${pn(exploreNeed)}位膜法师`}}
 				</div>
 			</div>
 		</div>
